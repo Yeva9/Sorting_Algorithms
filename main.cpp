@@ -19,6 +19,8 @@ void Testing1(int* array, int size, void (*function_name)(int*, int))
 		Sortings::SelectionSort(array, size);
 	} else if (function_name == Sortings::HeapSort) {	
 		Sortings::HeapSort(array, size);
+	} else if (function_name == Sortings::RadixSort) {	
+		Sortings::RadixSort(array, size);
 	} else {	
 		Sortings::ShellSort(array, size);
 	}
@@ -65,8 +67,9 @@ int main()
 //	Testing1(array, n, Sortings::InsertionSort);
 //	Testing1(array, n, Sortings::HeapSort);
 //	Testing1(array, n, Sortings::ShellSort);
+	Testing1(array, n, Sortings::RadixSort);
 
-	Testing2(array, 0, n - 1, Sortings::QuickSort);
+//	Testing2(array, 0, n - 1, Sortings::QuickSort);
 //	Testing2(array, 0, n - 1, Sortings::MergeSort);
 		
 	return 0;
