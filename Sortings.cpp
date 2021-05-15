@@ -15,6 +15,7 @@ namespace
 
 void Sortings::BubbleSort(int* array, int size) {
 	bool is_sorted = true;
+
 	for (int i = 0; i < size - 1; ++i) {
 		for (int j = 0; j < size - i - 1; ++j) {
 			if (array[j] > array[j + 1]) {
@@ -46,8 +47,7 @@ void Sortings::SelectionSort(int* array, int size) {
     }
 }
 
-void Sortings::InsertionSort(int* array, int size)
-{
+void Sortings::InsertionSort(int* array, int size) {
 	for (int i = 1; i < size; ++i) {
 		int tmp = array[i], j = i - 1;
 		while (j >= 0 && array[j] > tmp) {
