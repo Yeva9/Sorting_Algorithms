@@ -2,8 +2,29 @@
 
 #include "Sortings.hpp"
 	
-void Testing1(int* array, int size, void (*function_name)(int*, int))
+void Testing1(int* array, int size, void (*function_name)(int*, int));
+void Testing2(int* array, int start, int end, void (*function_name)(int*, int, int));
+
+int main()
 {
+	/***************testing**************/
+	const int n = 11;
+	int array[n] = {3, 2, 6, 8, 0, 10, 0, 22, 9, 4, 5};
+
+//	Testing1(array, n, Sortings::BubbleSort);
+//	Testing1(array, n, Sortings::SelectionSort);
+//	Testing1(array, n, Sortings::InsertionSort);
+//	Testing1(array, n, Sortings::HeapSort);
+//	Testing1(array, n, Sortings::ShellSort);
+	Testing1(array, n, Sortings::RadixSort);
+
+//	Testing2(array, 0, n - 1, Sortings::QuickSort);
+//	Testing2(array, 0, n - 1, Sortings::MergeSort);
+		
+	return 0;
+}
+
+void Testing1(int* array, int size, void (*function_name)(int*, int)) {
 	std::cout << "Before Sorting: ";
 
 	for (int i = 0; i < size; ++i) {
@@ -33,8 +54,7 @@ void Testing1(int* array, int size, void (*function_name)(int*, int))
 	std::cout << std::endl;	
 }
 
-void Testing2(int* array, int start, int end, void (*function_name)(int*, int, int))
-{
+void Testing2(int* array, int start, int end, void (*function_name)(int*, int, int)) {
 	std::cout << "Before Sorting: ";
 
 	for (int i = 0; i <= end; ++i) {
@@ -56,21 +76,4 @@ void Testing2(int* array, int start, int end, void (*function_name)(int*, int, i
 	std::cout << std::endl;	
 }
 
-int main()
-{
-	/***************testing**************/
-	const int n = 11;
-	int array[n] = {3, 2, 6, 8, 0, 10, 0, 22, 9, 4, 5};
 
-//	Testing1(array, n, Sortings::BubbleSort);
-//	Testing1(array, n, Sortings::SelectionSort);
-//	Testing1(array, n, Sortings::InsertionSort);
-//	Testing1(array, n, Sortings::HeapSort);
-//	Testing1(array, n, Sortings::ShellSort);
-	Testing1(array, n, Sortings::RadixSort);
-
-//	Testing2(array, 0, n - 1, Sortings::QuickSort);
-//	Testing2(array, 0, n - 1, Sortings::MergeSort);
-		
-	return 0;
-}

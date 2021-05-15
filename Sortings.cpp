@@ -6,16 +6,14 @@
 
 namespace 
 {
-	void Swap(int& a, int& b)
-	{
+	void Swap(int& a, int& b) {
 		int tmp = a;
 		a = b;
 		b = tmp;
 	}	
 }
 
-void Sortings::BubbleSort(int* array, int size)
-{
+void Sortings::BubbleSort(int* array, int size) {
 	bool is_sorted = true;
 	for (int i = 0; i < size - 1; ++i) {
 		for (int j = 0; j < size - i - 1; ++j) {
@@ -31,8 +29,7 @@ void Sortings::BubbleSort(int* array, int size)
 	}
 }
 
-void Sortings::SelectionSort(int* array, int size)
-{
+void Sortings::SelectionSort(int* array, int size) {
 	for (int i = 0; i < size - 1; ++i) {
 		int min_index = i;
 		for (int j = i + 1; j < size; ++j) {
@@ -63,8 +60,7 @@ void Sortings::InsertionSort(int* array, int size)
 
 namespace 
 {
-	int Partitioning(int* array, int start, int end)
-	{
+	int Partitioning(int* array, int start, int end) {
 		int pivot = end; 	 
 		int pindex = start;  // index for partitioning
 
@@ -80,8 +76,7 @@ namespace
 	}
 }
 
-void Sortings::QuickSort(int* array, int start, int end)
-{
+void Sortings::QuickSort(int* array, int start, int end) {
 	if (start >= end) {
 		return;
 	}
@@ -94,8 +89,7 @@ void Sortings::QuickSort(int* array, int start, int end)
 
 namespace
 {	
-	void Merge(int* array, int start, int middle, int end)
-	{
+	void Merge(int* array, int start, int middle, int end) {
 		int i = start; 			 // initial index of first subarray
 		int j = middle + 1;		 // initial index of second subarray
 		int l = end - start + 1; // size of temp array
@@ -119,8 +113,7 @@ namespace
 	}
 }
 
-void Sortings::MergeSort(int* array, int start, int end)
-{
+void Sortings::MergeSort(int* array, int start, int end) {
 	if (start >= end) {
 		return;
 	}
@@ -134,8 +127,7 @@ void Sortings::MergeSort(int* array, int start, int end)
 
 namespace 
 {
-	void Heapify(int* array, int size, int root)
-	{
+	void Heapify(int* array, int size, int root) {
     	int max = root;
     	int right = (2 * root) + 1;
     	int left = (2 * root) + 2;
@@ -156,8 +148,7 @@ namespace
 }
 
 
-void Sortings::HeapSort(int* array, int size)
-{
+void Sortings::HeapSort(int* array, int size) {
     for (int i = (size / 2) - 1; i >= 0; --i) {
         Heapify(array, size, i);        
     }
@@ -169,8 +160,7 @@ void Sortings::HeapSort(int* array, int size)
 }
 
 
-void Sortings::ShellSort(int* array, int size)
-{
+void Sortings::ShellSort(int* array, int size) {
 	for (int gap = size / 2; gap > 0; gap /= 2) {
 		for (int i = gap; i < size; ++i ) {
 			for (int j = i - gap; j >= 0; j -= gap) {
@@ -191,10 +181,10 @@ namespace
 	}
 }
 
-void Sortings::RadixSort(int* array, int size) 
-{
+void Sortings::RadixSort(int* array, int size) {
 	const int length = sizeof(int) * 8;
 	std::queue<int> Q[2];
+
 	for (int i = 0; i < length; ++i) {
 		for (int j = 0; j < size; ++j) {
 			Q[Bit(array[j], i)].push(array[j]);
